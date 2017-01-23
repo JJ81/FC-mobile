@@ -19,12 +19,13 @@ var async = require('async');
  * - 누르지 않을 경우 비디오 학습이력 초기화 한다.
  */
 router.get('/settings', isAuthenticated, function (req, res) {
-  console.log('test');
+
   return res.json({
     success: true,
-    interval: 5,
-    waiting_seconds : 32 // 대기시간 5초 + 1초 delay
+    interval: 10,
+    waiting_seconds : 31 // 대기시간 5초 + 1초 delay
   });
+
 });
 
 // url: /api/v1/log/video/playtime 

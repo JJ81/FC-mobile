@@ -10,16 +10,16 @@
 requirejs(
     [      
       'jquery',
-	  'axios',
-	  'plyr',    
+	    'axios',
+	    'plyr',    
       'jqueryTimer',
     ],
     function ($, axios, plyr) {
       var timer_logging_interval = 0, // log every 5 seconds
           timer = null,
-		  timer2 = null, // 비디오 시청 종료 후 다음 버튼을 누르도록 강요하는 타이머 
+		      timer2 = null, // 비디오 시청 종료 후 다음 버튼을 누르도록 강요하는 타이머 
           timer_played_seconds = 0,
-		  timer_waiting_seconds = 0, // 다음버튼을 노출하는데 까지 대기하는 시간
+		      timer_waiting_seconds = 0, // 다음버튼을 노출하는데 까지 대기하는 시간
           player_options = {
             autoplay: false,
             debug: false
@@ -40,7 +40,9 @@ requirejs(
 		  session_has_ended = false;
 
 		$(function () {
+
 			getVideoSettings();
+
 		});
       
       	// 비디오 셋팅값을 조회한다.
@@ -49,6 +51,7 @@ requirejs(
 
 				timer_logging_interval = res.interval;		  
 				timer = $.timer(1000 * timer_logging_interval, playTimeLogger, true);
+        timer.stop();
 
 				// 비디오 종료 후 학습이력 초기화까지 대기하는 시간 
 				timer_waiting_seconds = res.waiting_seconds;
@@ -74,7 +77,7 @@ requirejs(
             return axios.delete('/session/log', {
                 params: {
                     training_user_id: training_user_id,
-					course_list_id: course_list_id,
+					          course_list_id: course_list_id,
                 }
             })
             .then(function (response) {
@@ -121,7 +124,6 @@ requirejs(
 
 		// plyr [timeupdate] event
 		video.addEventListener('timeupdate', function() {
-			//console.log('timeupdate');
 		});                
 
 		// plyr [ended] event
@@ -251,7 +253,7 @@ requirejs(
 
 		// 비디오 재생시간이 존재하는지 여부 체크
 		function checkVideoDuration (event_name) {
-			
+
 			video_duration = video.plyr.getDuration();
 
 			// if (video_duration)
