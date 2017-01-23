@@ -11,7 +11,7 @@ var isAuthenticated = function (req, res, next) {
 require('../commons/helpers');
 var async = require('async');
 
-// 퀴즈 정답확인1
+// 퀴즈 정답확인12
 // JSON.parse 는 string 개체를 JSON 개체로, JSON.stringify 는 JSON 개체를 string 로 변환한다.
 router.post('/log/checkanswer', isAuthenticated, function (req, res) {
 
