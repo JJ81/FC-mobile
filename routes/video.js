@@ -12,7 +12,7 @@ require('../commons/helpers');
 var async = require('async');
 
 /**
- * 비디오 환경설정값을 리턴한다.
+ * 비디오 환경설정값을 리턴한다.  
  * interval: 시청시간 기록 주기
  * confirm_delay : 
  * - 비디오 시청 종료 후 눌러야 하는 팝업이 떠있는 시간. 
