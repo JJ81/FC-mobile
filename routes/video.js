@@ -23,7 +23,7 @@ router.get('/settings', isAuthenticated, function (req, res) {
   return res.json({
     success: true,
     interval: 5,
-    waiting_seconds : 31 // 대기시간 5초 + 1초 delay
+    waiting_seconds : 32 // 대기시간 5초 + 1초 delay
   });
 });
 
