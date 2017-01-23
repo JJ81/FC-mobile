@@ -19,6 +19,7 @@ var async = require('async');
  * - 누르지 않을 경우 비디오 학습이력 초기화 한다.
  */
 router.get('/settings', isAuthenticated, function (req, res) {
+  console.log('test');
   return res.json({
     success: true,
     interval: 5,
